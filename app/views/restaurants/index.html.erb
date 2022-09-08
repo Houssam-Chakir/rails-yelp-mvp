@@ -1,0 +1,13 @@
+<h1 class='text-light'>Restaurants</h1>
+<div class='row'>
+<% @restaurants.each do |r| %>
+  <div class="card col-8 m-3" style="width: 18rem;">
+    <img class="card-img-top" src="https://source.unsplash.com/random/?restaurant" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%= r.name %></h5>
+      <p class="card-text"><%= r.address %><%= r.phone_number %><%= r.category %></p>
+      <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+    </div>
+  </div>
+<% end %>
+</div>
