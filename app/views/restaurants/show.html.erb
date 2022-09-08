@@ -1,0 +1,9 @@
+ <div class="card col m-3" style="width: 100vh; height: 100vh">
+    <img class="card-img-top" src="https://source.unsplash.com/random/?restaurant" alt="Card image cap" style="height: 50%">
+    <div class="card-body">
+      <h5 class="card-title"><%= @restaurant.name %></h5>
+      <p class="card-text"><%= @restaurant.address %><%= @restaurant.phone_number %><%= @restaurant.category %></p>
+      <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+      <%= link_to 'Go back', restaurants_path, class: 'btn btn-primary'  %>
+    </div>
+  </div>

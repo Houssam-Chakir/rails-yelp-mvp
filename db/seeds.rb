@@ -5,6 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+puts 'destroying data base'
+Restaurant.destroy_all
+Review.destroy_all
+
 puts 'creating restaurants'
 10.times do
   r = Restaurant.create({
@@ -15,4 +19,15 @@ puts 'creating restaurants'
   })
   puts "created restaurants #{r.id}"
 end
-puts 'done'
+puts 'done with restaus'
+
+puts 'creating reviews'
+10.times do
+  review = Review.create!({
+    content: Faker::Quote.matz,
+    rating: [1, 2, 3, 4, 5].sample,
+    restaurant_id: (1..10).to_a.sample
+  })
+  puts "review #{review.id} done"
+end
+puts "done"
